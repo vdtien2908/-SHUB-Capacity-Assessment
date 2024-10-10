@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Oct 10, 2024 at 06:02 AM
+-- Generation Time: Oct 10, 2024 at 04:48 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.0.28
 
@@ -140,7 +140,6 @@ CREATE TABLE `roles` (
 --
 
 CREATE TABLE `role_permission` (
-  `id` int(11) NOT NULL,
   `role_id` int(11) DEFAULT NULL,
   `permission_id` int(11) DEFAULT NULL,
   `created_at` datetime DEFAULT current_timestamp()
@@ -298,7 +297,6 @@ ALTER TABLE `roles`
 -- Indexes for table `role_permission`
 --
 ALTER TABLE `role_permission`
-  ADD PRIMARY KEY (`id`),
   ADD KEY `role_id` (`role_id`),
   ADD KEY `permission_id` (`permission_id`);
 
@@ -379,12 +377,6 @@ ALTER TABLE `pumps`
 -- AUTO_INCREMENT for table `roles`
 --
 ALTER TABLE `roles`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `role_permission`
---
-ALTER TABLE `role_permission`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
